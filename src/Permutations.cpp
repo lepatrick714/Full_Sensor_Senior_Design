@@ -7,10 +7,12 @@ Permutations::Permutations() {
 }
 
 void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5) { 
-    if(gas1+gas2+gas3+gas4+gas5 == 100) { 
-        GPD temp(gas1, gas2, gas3, gas4, gas5); 
+    GPD temp(gas1, gas2, gas3, gas4, gas5); 
+    int check_total = gas1 + gas2 + gas3 + gas4 + gas5; 
+
+    if(GD_Hash.find(temp) == GD_Hash.end() && check_total == 100) { 
+        GD_Hash.insert(temp); 
         GD.push_back(temp);
-    
     }
 } 
 

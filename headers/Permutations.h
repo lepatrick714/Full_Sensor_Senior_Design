@@ -3,8 +3,10 @@
 
 #include <vector> 
 #include <iostream> 
+#include <unordered_set>
 
 using namespace std; 
+
 
 struct GPD { 
     int gas1; 
@@ -20,12 +22,34 @@ struct GPD {
         this->gas4 = gas4; 
         this->gas5 = gas5;
     } 
+
+	bool operator==(const GPD B) const  
+	{	
+		if(gas1 == B.gas1 && gas2 == B.gas2 && gas3 == B.gas3 && gas4 == B.gas4 && gas5 == B.gas5)  
+			return true;
+		return false;
+	}
+	
+
 };
+
+namespace std {
+
+	template <> struct hash< GPD > {
+		inline size_t operator()(const GPD &v) const {
+			std::hash<int> int_hasher;
+			return int_hasher(v.gas1) ^ int_hasher(v.gas2) ^ int_hasher(v.gas3) ^ int_hasher(v.gas4) ^ int_hasher(v.gas5);
+		}
+	};
+
+}
+
 
 class Permutations { 
     private: 
         vector<GPD> GD;                      // Gas Data 
-    
+        unordered_set<GPD> GD_Hash;
+
     public: 
         Permutations(); 
 
