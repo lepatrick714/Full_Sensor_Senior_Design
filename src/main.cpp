@@ -1,12 +1,14 @@
-#include <iostream> 
-#include <vector> //Will need to upgrade this to a hash table
+#include "./Permutations.cpp"
 
 using namespace std; 
 
 int main() { 
-    Storage st; 
-    st.partition(100, 0, 0); 
-    st.print_sys(); 
+    Permutations *test = new Permutations(); 
 
+    test->partitions_Gases(100, 0, 0, 0, 0, 10); 
+
+    test->To_CSV(); 
+    
+    
     return 0;
 }
