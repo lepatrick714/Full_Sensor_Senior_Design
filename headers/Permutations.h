@@ -55,7 +55,7 @@ class Permutations {
 
         void check_valid(int, int, int, int, int);
         void partitions_Gases(int, int, int, int, int, int); 
-        void To_CSV(); 
+        string To_CSV(); 
 
 };
 #endif

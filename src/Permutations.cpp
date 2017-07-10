@@ -13,6 +13,7 @@ void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5)
     if(GD_Hash.find(temp) == GD_Hash.end() && check_total == 100) { 
         GD_Hash.insert(temp); 
         GD.push_back(temp);
+        //std::cout << temp.gas1 << ',' << temp.gas2 << ',' << temp.gas3 << ',' << temp.gas4 << ',' << temp.gas5 << endl;
     }
 } 
 
@@ -33,8 +34,10 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
     }
 }
 
-void Permutations::To_CSV() { 
+string Permutations::To_CSV() { 
+    string results = ""; 
     for(GPD i : this->GD) { 
-        std::cout << i.gas1 << ',' << i.gas2 << ',' << i.gas3 << ',' << i.gas4 << ',' << i.gas5 << endl;
-    } 
+        results += i.gas1 + ',' + i.gas2 + ',' + i.gas3 + ',' + i.gas4 + ',' + i.gas5 + '\n';
+    }
+    return results; 
 }
