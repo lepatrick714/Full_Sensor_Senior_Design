@@ -36,8 +36,8 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
 
 string Permutations::To_CSV() { 
     string results = ""; 
-    for(GPD i : this->GD) { 
-        results += i.gas1 + ',' + i.gas2 + ',' + i.gas3 + ',' + i.gas4 + ',' + i.gas5 + '\n';
+    for(GPD i : this->GD) {
+        results += to_string(i.gas1) + "," + to_string(i.gas2) + "," + to_string(i.gas3) + "," + to_string(i.gas4) + "," + to_string(i.gas5) + "\n";
     }
     return results; 
 }
