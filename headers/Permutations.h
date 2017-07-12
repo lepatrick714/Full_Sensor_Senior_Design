@@ -5,6 +5,7 @@
 #include <iostream> 
 #include <string>
 #include <unordered_set>
+#include <fstream> 
 
 using namespace std; 
 
@@ -55,7 +56,9 @@ class Permutations {
         Permutations(); 
 
         void check_valid(int, int, int, int, int);
+        void check_valid(int, int, int, int, int, ofstream&);
         void partitions_Gases(int, int, int, int, int, int); 
+        void partitions_Gases(int, int, int, int, int, int, ofstream&); 
         string To_CSV(); 
 
 };

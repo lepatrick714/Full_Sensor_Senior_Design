@@ -58,8 +58,7 @@ int main(int argc, char**argv) {
     ///////////////////////    
     cout << "Running Interval of 5" << endl;
     Permutations *P_6 = new Permutations(); 
-    P_6->partitions_Gases(100, 0, 0, 0, 0, 5); 
-    Out_1 << P_6->To_CSV(); 
+    P_6->partitions_Gases(100, 0, 0, 0, 0, 5, Out_1); 
     
     Out_1 << endl;
        
@@ -67,7 +66,7 @@ int main(int argc, char**argv) {
     ///////////////////////    
     cout << "Running Interval of 2" << endl;
     Permutations *P_7 = new Permutations(); 
-    P_7->partitions_Gases(100, 0, 0, 0, 0, 2); 
+    P_7->partitions_Gases(100, 0, 0, 0, 0, 2, Out_1); 
     Out_1 << P_7->To_CSV(); 
     
     Out_1.close();   
