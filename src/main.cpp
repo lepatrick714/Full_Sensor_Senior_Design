@@ -13,7 +13,7 @@ int main(int argc, char**argv) {
 
     Permutations *P_1 = new Permutations(); 
     P_1->partitions_Gases(100, 0, 0, 0, 0, 100); 
-    Out_1 = P_1->To_CSV(); 
+    Out_1 << P_1->To_CSV(); 
     
     Out_1.close();
     cout << endl;
