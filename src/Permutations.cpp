@@ -35,6 +35,9 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
     else if(gas1 < 0 || gas2 < 0 || gas3 < 0 || gas4 < 0 || gas5 < 0) {
         return;
     }
+    else if(gas1 > 100 || gas2 > 100 || gas3 > 100 || gas4 > 100 || gas5 > 100) { 
+        return;
+    }
     else {
 
         check_valid(gas1, gas2, gas3, gas4, gas5); 
