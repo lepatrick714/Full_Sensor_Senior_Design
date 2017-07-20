@@ -5,10 +5,10 @@
 using namespace std; 
 
 int main(int argc, char**argv) { 
-    string output;  
     ////////////////////////
-    ofstream Out_1("100"); 
+    ofstream Out_1("1"); 
    
+    /*
     cout << "Running Interval of 100" << endl;
 
     Permutations *P_1 = new Permutations(); 
@@ -61,12 +61,12 @@ int main(int argc, char**argv) {
     P_6->partitions_Gases(100, 0, 0, 0, 0, 5, Out_1); 
     
     Out_1 << endl;
-       
+    */   
     
     ///////////////////////    
     cout << "Running Interval of 2" << endl;
     Permutations *P_7 = new Permutations(); 
-    P_7->partitions_Gases(100, 0, 0, 0, 0, 2, Out_1); 
+    P_7->partitions_Gases(100, 0, 0, 0, 0, 1, Out_1); 
     Out_1 << P_7->To_CSV(); 
     
     Out_1.close();   
