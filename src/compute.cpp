@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-void calculate_cp(int tempCnt, int pressureCnt, double &CPMethane, double &CPPropane, double &CPCO2, double &CPEthane, double &CPButane, double &thermConMethane, double &thermConEthane, double &thermConPropane, double &thermConCO2, double &thermConButane) {
+bool calculate_cp(int tempCnt, int pressureCnt, double &CPMethane, double &CPPropane, double &CPCO2, double &CPEthane, double &CPButane, double &thermConMethane, double &thermConEthane, double &thermConPropane, double &thermConCO2, double &thermConButane) {
 
     if (tempCnt == -20 && pressureCnt == 500) {
       CPMethane = methP500Tneg20 * gasvalue;
@@ -405,7 +405,10 @@ void calculate_cp(int tempCnt, int pressureCnt, double &CPMethane, double &CPPro
       thermConButane = thercoButP3000T80; 
     } else {
      std::cout << "Error case not detected in compute.cpp file" << std::endl;
+     return false;
     }
+    
+    return true;
 
 } // End of calculate_cp 
 
