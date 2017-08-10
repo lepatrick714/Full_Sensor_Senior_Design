@@ -13,7 +13,7 @@ void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5)
     if(GD_Hash.find(temp) == GD_Hash.end() && check_total == 100) { 
         GD_Hash.insert(temp); 
         GD.push_back(temp);
-    }
+   }
 } 
 
 void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5, ofstream &out) { 
@@ -67,6 +67,59 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
 
     }
 }
+
+// Added By Rick, Takes a super long time for results. Function should be depricated
+void Permutations::partitions_Gases(int interval, ofstream &out) {
+    int step_count = 1;                                                       //Variable to keep track of progress.
+    for ( int gas1 = 0; gas1 <= 100; gas1++) {
+        for (int gas2 = 0; gas2 <= 100; gas2++) {
+                if (gas1 + gas2 > 100) {
+                    break;
+                }
+            for (int gas3 = 0; gas3 <= 100; gas3++) {
+                if(gas1 + gas2 + gas3 > 100) {
+                    break;
+                }
+                for (int gas4 = 0; gas4 <= 100; gas4++) {
+                    if (gas1 + gas2 + gas3 + gas4  > 100) {
+                        break;
+                    }
+                    for (int gas5 = 0; gas5 <=100; gas5++) {
+                        
+                        if ( gas1 + gas2 + gas3 + gas4 + gas5 > 100) {
+                            break;
+                        }
+
+                        check_valid(gas1, gas2, gas3, gas4, gas5, out);
+                        cout << step_count << " combinations evaluated." << endl;
+                        step_count++;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Optimized version of Code.
+void Permutations::partitions_Gases_Opt(int interval, ofstream &out) {
+    int total_gas = 100;
+    int gas1 = 0, gas2 = 0, gas3 = 0, gas4 = 0, gas5 = 0;
+	
+	while ( gas1 > -1){
+		
+		for(gas1 = total_gas; gas1 >= 0; gas1--) {
+			gas2 = total_gas - gas1;
+			cout << gas1 << ", " << gas2 << ", " << gas3 << ", " << gas4 << endl;
+		}
+		
+		total_gas--;
+		cout << "Total gas: " << total_gas << endl;
+		gas1 = total_gas;
+		gas3 = 100 - gas1;
+		
+	}
+}
+
 
 string Permutations::To_CSV() { 
     string results = ""; 

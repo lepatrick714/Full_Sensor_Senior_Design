@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char**argv) { 
     ////////////////////////
-    ofstream Out_1("1"); 
+    ofstream Out_1("BF_opt.txt"); 
    
     /*
     cout << "Running Interval of 100" << endl;
@@ -64,13 +64,27 @@ int main(int argc, char**argv) {
     */   
     
     ///////////////////////    
+    /*
     cout << "Running Interval of 2" << endl;
     Permutations *P_7 = new Permutations(); 
     P_7->partitions_Gases(100, 0, 0, 0, 0, 1, Out_1); 
     Out_1 << P_7->To_CSV(); 
     
     Out_1.close();   
-       
+    */
+
+    //cout << "Running Brute Force interval of 1" << endl;
+    //Permutations *P_8 = new Permutations();
+    //P_8->partitions_Gases(0, Out_1);
+    //Out_1 << P_8->To_CSV();
+    
+    cout << "Running Brute Force Opt interval of 1" << endl;
+    Permutations *P_9 = new Permutations();
+    P_9->partitions_Gases_Opt(0, Out_1);
+    Out_1 << P_9->To_CSV();
+
+
+    Out_1.close();
     
     return 0;
 }
