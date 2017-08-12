@@ -15,6 +15,8 @@ Permutations::Permutations() {
     this->GD.clear();
 }
 
+
+
 void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5) { 
     GPD temp(gas1, gas2, gas3, gas4, gas5); 
     int check_total = gas1 + gas2 + gas3 + gas4 + gas5; 
@@ -24,6 +26,8 @@ void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5)
         GD.push_back(temp);
     }
 } 
+
+
 
 void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5, ofstream &out) { 
     GPD temp(gas1, gas2, gas3, gas4, gas5); 
@@ -35,6 +39,8 @@ void Permutations::check_valid(int gas1, int gas2, int gas3, int gas4, int gas5,
         out << temp.gas1 << ',' << temp.gas2 << ',' << temp.gas3 << ',' << temp.gas4 << ',' << temp.gas5 << endl;
     }
 }
+
+
 
 void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int gas5, int interval) { 
     if(gas1 == 0) {  
@@ -58,6 +64,8 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
     }
 }
 
+
+
 void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int gas5, int interval, ofstream &out) { 
     if(gas1 == 0) {  
         check_valid(gas1, gas2, gas3, gas4, gas5, out); 
@@ -76,6 +84,8 @@ void Permutations::partitions_Gases(int gas1, int gas2, int gas3, int gas4, int 
 
     }
 }
+
+
 
 string Permutations::To_CSV() { 
     string results = ""; 
