@@ -64,10 +64,12 @@ class Permutations {
     public: 
         Permutations(); 
 
-        void check_valid(int, int, int, int, int);
-        void check_valid(int, int, int, int, int, ofstream&);
-        void partitions_Gases(int, int, int, int, int, int); 
-        void partitions_Gases(int, int, int, int, int, int, ofstream&); 
+        void check_valid(int gas1, int gas2, int gas3, int gas4, int gas5);
+        void check_valid(int gas1, int gas2, int gas3, int gas4, int gas5, ofstream &out);
+        void partitions_Gases(int gas1, int gas2, int gas3, int gas4, int gas5, int interval); 
+        void partitions_Gases(int gas1, int gas2, int gas3, int gas4, int gas5, int interval, ofstream &out); 
+        void partitions_Gases(int interval, ofstream &out);
+        void partitions_Gases_Opt(int interval, ofstream &out);
         string To_CSV(); 
 
 };
